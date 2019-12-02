@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Cartorio Manager</title>
+</head>
+<body>
+	<div align="center">
+	
+		<h1>Cartório Manager</h1>
+		<a href="new">Novo Cartório</a>
+		</br></br>
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>Cartório ID</th>
+					<th>Nome Cartório</th>
+					<th>Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cartorio: ${cartorios}">
+					<td th:text="${cartorio.id}">Cartório ID</td>
+					<td th:text="${cartorio.nome}">Nome</td>
+					<td>
+						<a th:href="@{'/edit/' + ${cartorio.id}}">Editar</a>
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a th:href="@{'/delete/' + ${cartorio.id}}">Deletar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+</body>
+</html>
