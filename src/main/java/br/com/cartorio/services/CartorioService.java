@@ -16,6 +16,7 @@ public class CartorioService {
 	private CartorioRepository repository;
 
 	public List<Cartorio> listarCartorios() {
+		String teste = "teste";
 		return repository.findAll();
 	}
 
